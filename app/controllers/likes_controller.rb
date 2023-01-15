@@ -10,8 +10,8 @@ class LikesController < ApplicationController
     def create
       article = Article.find(params[:article_id])
       article.likes.create!(user_id: current_user.id)
-      
-      render json: { stauts: 'ok' }
+
+    render json: { status: 'ok' }
 
     end
 
@@ -20,6 +20,6 @@ class LikesController < ApplicationController
         like = article.likes.find_by!(user_id: current_user.id)
         like.destroy!
 
-      render json: { stauts: 'ok' }
+      render json: { status: 'ok' }
     end
 end
