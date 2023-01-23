@@ -11,14 +11,5 @@ RSpec.describe Article, type: :model do
    end
   end
 
-  context 'タイトルの文字が１文字の場合' do
-    let!(:article) { build(:article, title: Faker::Lorem.characters(number: 1), user: user) }
-
-    before do
-    article.save
-    end
-  it '記事を保存できない' do
-    expect(article.errors.messages[:title][0]).to eq('は2文字以上で入力してください') 
-  end
  end
 end

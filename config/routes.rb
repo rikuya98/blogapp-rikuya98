@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       resource :unfollows, only: [:create]
     end
 
-
     scope module: :apps do
       resource :profile, only: [:show, :edit, :update]
       resource :timeline, only: [:show]
@@ -28,4 +27,3 @@ Rails.application.routes.draw do
      end
   end
 end
-
